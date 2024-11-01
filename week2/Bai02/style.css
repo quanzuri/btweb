@@ -1,0 +1,117 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+/* Header Section */
+header {
+    background-image: url('/2023_BTHTCNWeb_/2023_BTHTCNWeb_/Tuan2/Bai2/background.png');
+    background-size: cover;
+    padding: 20px;
+    text-align: center;
+}
+
+.logo {
+    display: inline-block;
+    vertical-align: middle;
+}
+.logo img {
+    width: 50px;
+    height: 50px;
+}
+nav {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #555;
+    font-weight: bold;
+}
+
+/* Main Content Section */
+main {
+    width: 70%;
+}
+
+.content-block {
+    margin-bottom: 20px;
+}
+
+.content-block img {
+    height: 300px;
+    width: 300px;
+    height: auto;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+.content-block h2 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.content-block h3 {
+    font-size: 1.2em;
+    color: #d33b3b;
+    margin: 5px 0;
+}
+
+/* Sidebar Section */
+.sidebar {
+    width: 25%;
+    padding-left: 20px;
+}
+
+.popular-recipes, .contact {
+    margin-bottom: 20px;
+}
+
+.popular-recipes h3, .contact h3 {
+    font-size: 1.2em;
+    color: #d33b3b;
+}
+
+.popular-recipes ul {
+    list-style: none;
+    padding: 0;
+}
+
+.popular-recipes ul li {
+    margin-bottom: 10px;
+}
+
+.popular-recipes ul li a {
+    text-decoration: none;
+    color: #d33b3b;
+}
+
+/* Footer Section */
+footer {
+    background-image: url('/2023_BTHTCNWeb_/2023_BTHTCNWeb_/Tuan2/Bai2/background.png');
+    background-size: cover;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #fff;
+}

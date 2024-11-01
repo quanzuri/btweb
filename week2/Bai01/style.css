@@ -1,0 +1,244 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+/* Header */
+header {
+    background-color: #f5d1d1;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: #d33b3b;
+    font-style: italic;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #f5d1d1;
+    padding: 15px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+nav ul img{
+    width: 20px;
+    height: 20px;
+
+}
+nav ul li.separator {
+    color: #fff;
+}
+
+nav .search-bar {
+    display: flex;
+    align-items: center;
+}
+
+nav input[type="text"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+nav button {
+    margin-left: 10px;
+    padding: 5px 10px;
+
+}
+
+
+/* Sidebar */
+.sidebar {
+    float: left;
+    width: 20%;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 15px; /* Rounded corners for the whole sidebar */
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f7c6c6;
+    border-radius: 20px; /* Rounded corners for each item */
+    text-align: center;
+}
+
+/* Sidebar Image */
+.sidebar img {
+    width: 100%;
+    border-radius: 50%; /* Rounds the image */
+    margin-top: 20px;
+}
+
+/* Main Content */
+main {
+    float: left;
+    width: 55%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Section Titles */
+.section-title {
+    background-color: #f5d1d1;
+    color: #d33b3b;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.8em;
+    margin: 20px 0;
+    border-radius: 10px; /* Rounded corners for section titles */
+}
+
+/* Back to Top Links */
+.back-to-top {
+    color: #d33b3b;
+    text-decoration: underline;
+    display: block;
+    margin: 10px 0;
+}
+
+/* Form Section */
+.info-section {
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    text-align: center;
+}
+
+
+/* Form Layout */
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    justify-items: center;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Full Width for Comment Field */
+.full-width {
+    grid-column: span 2;
+}
+
+/* Nationality Section */
+.nationality div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Input, Select, and Textarea Styling */
+input, select, textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Placeholder Styling */
+input::placeholder, textarea::placeholder {
+    color: #aaa;
+}
+
+/* Button Group */
+.button-group {
+    margin-left: -550px;
+    width: 100px;
+    grid-column: span 2;
+    display: left;
+    justify-content: left;
+    gap: 20px;
+}
+
+/* Button Styling */
+button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #d33b3b;
+    color: #fff;
+}
+
+
+/* Events Section */
+.events {
+    margin-top: 30px;
+    float: right;
+    width: 20%;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 15px; /* Added rounded corners */
+}
+
+.events .event {
+    margin-bottom: 20px;
+}
+
+.events img {
+    width: 100%;
+    border-radius: 10px; /* Added rounded corners for images */
+}
+
+/* Footer */
+footer {
+    clear: both;
+    background-color: #f5d1d1;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #d33b3b;
+    border-radius: 10px; /* Rounded corners for the footer */
+}

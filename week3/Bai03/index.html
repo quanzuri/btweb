@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunny Acres</title>
+    <style>
+        /* Thiết lập hình nền phủ toàn trang */
+        body {
+            font-family: Arial, sans-serif;
+            color: #00FF00; /* Màu chữ xanh lá */
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Cài đặt cho container chính */
+        .container {
+            width: 700px;
+            height: 500px;
+            background-image: url('/2023_BTHTCNWeb_/2023_BTHTCNWeb_/Tuan2/Bai3/background.jpg');
+            background-repeat: repeat; /* Lặp lại hình nền nếu cần */
+            background-attachment: fixed;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7); /* Nền bán trong suốt để dễ đọc hơn */
+            display: inline-block;
+            position: relative;
+            margin-top: 20px;
+        }
+        .container img {
+            width: 400px;
+            height: 200px;
+        }
+        /* Cài đặt cho tiêu đề */
+        h1 {
+            font-size: 3em;
+            color: #00FF00; /* Màu xanh lá cây cho chữ */
+        }
+
+        /* Cài đặt cho tiêu đề phụ */
+        h2 {
+            color: #FF4500; /* Màu cam cho chữ phụ */
+        }
+
+        /* Cài đặt cho logo */
+        .logo {
+            margin: 20px;
+        }
+
+        /* Cài đặt cho hình xe */
+        .car-image {
+            margin-top: -20px;
+            position: relative;
+        }
+
+        /* Cài đặt cho chữ trên hình xe */
+        .car-text {
+            font-size: 2em;
+            color: red;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        /* Cài đặt cho phần thông tin liên lạc */
+        .contact {
+            color: #00FF00;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <!-- Hình logo -->
+        <img src="/2023_BTHTCNWeb_/2023_BTHTCNWeb_/Tuan2/Bai3/salogo.gif" alt="Sunny Acres Logo" class="logo">
+        
+        <!-- Hình xe liên kết đến trang khác -->
+        <div class="car-image">
+            <a href="home.html">
+                <img src="/2023_BTHTCNWeb_/2023_BTHTCNWeb_/Tuan2/Bai3/Siggie.jpg" alt="Alternator Double Dealer">
+                <div class="car-text">Alternator Double Dealer</div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

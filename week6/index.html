@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh Sách Sinh Viên</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .form-group {
+            margin-bottom: 10px;
+        }
+        .form-group label {
+            display: inline-block;
+            width: 80px;
+        }
+        input[type="text"] {
+            width: 200px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f4f4f4;
+            color: #e91e63;
+        }
+        h2 {
+            color: #e91e63;
+            text-align: center;
+        }
+        .header {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 20px;
+            color: #e91e63;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>DANH SÁCH SINH VIÊN</h2>
+
+    <div class="form-group">
+        <label for="mssv">Mã số SV:</label>
+        <input type="text" id="mssv" placeholder="Nhập mã số SV">
+    </div>
+    <div class="form-group">
+        <label for="name">Họ tên:</label>
+        <input type="text" id="name" placeholder="Nhập họ tên">
+    </div>
+    <div class="form-group">
+        <label for="class">Lớp:</label>
+        <input type="text" id="class" placeholder="Nhập lớp">
+    </div>
+    <button onclick="addStudent()">Thêm sinh viên</button>
+
+    <table id="studentTable">
+        <thead>
+            <tr>
+                <th>MSSV</th>
+                <th>Tên</th>
+                <th>Lớp</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Dữ liệu sinh viên sẽ được thêm ở đây -->
+        </tbody>
+    </table>
+
+    <script>
+        function addStudent() {
+            // Lấy giá trị từ các input
+            var mssv = document.getElementById("mssv").value;
+            var name = document.getElementById("name").value;
+            var studentClass = document.getElementById("class").value;
+
+            // Kiểm tra nếu các ô input không trống
+            if (mssv && name && studentClass) {
+                // Lấy bảng
+                var table = document.getElementById("studentTable").getElementsByTagName('tbody')[0];
+
+                // Tạo hàng mới
+                var newRow = table.insertRow();
+
+                // Tạo các ô dữ liệu
+                var cell1 = newRow.insertCell(0);
+                var cell2 = newRow.insertCell(1);
+                var cell3 = newRow.insertCell(2);
+
+                // Gán dữ liệu vào các ô
+                cell1.innerHTML = mssv;
+                cell2.innerHTML = name;
+                cell3.innerHTML = studentClass;
+
+                // Xóa dữ liệu trong input sau khi thêm
+                document.getElementById("mssv").value = "";
+                document.getElementById("name").value = "";
+                document.getElementById("class").value = "";
+            } else {
+                alert("Vui lòng nhập đầy đủ thông tin!");
+            }
+        }
+    </script>
+
+</body>
+</html>

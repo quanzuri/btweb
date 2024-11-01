@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    width: 100%;
+    background-color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+}
+
+.logo {
+    max-width: 200px;
+}
+
+.sidebar {
+    width: 200px; /* Điều chỉnh lại chiều rộng */
+    padding: 15px; /* Điều chỉnh khoảng cách padding */
+    background: url('/2023_BTHTCNWeb_/2023_BTHTCNWeb_/Tuan2/Bai4/back.jpg') no-repeat;
+    background-size: cover;
+    background-position: top left;
+    min-height: 100vh;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    margin: 10px 0; /* Điều chỉnh khoảng cách giữa các mục */
+    font-size: 15px;
+    color: #663399; /* Màu tím nhạt hơn để gần giống với thiết kế */
+    font-weight: bold;
+}
+
+main {
+    width: calc(100% - 230px); /* Điều chỉnh phần nội dung chính để cân đối */
+    padding: 20px;
+}
+
+h1 {
+    color: #ff9900; /* Màu tiêu đề gần giống với màu mẫu */
+    font-size: 24px;
+}
+
+h2 {
+    color: #ff9900; /* Màu phụ tiêu đề */
+    font-size: 20px;
+    margin-top: 20px; /* Khoảng cách trên mỗi tiêu đề */
+}
+
+.basic-materials {
+    border: 2px solid #ff9900; /* Đổi màu đường viền */
+    padding: 10px;
+    margin-top: 30px;
+}
+
+.basic-materials h2 {
+    margin-bottom: 10px;
+}
+
+.basic-materials ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f4f4f4;
+    margin-top: 20px;
+    color: #ff9900;
+    font-size: 12px;
+}

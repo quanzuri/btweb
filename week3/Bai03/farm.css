@@ -1,0 +1,96 @@
+/* General Styles */
+body {
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #000;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Links Section */
+#links {
+    float: left;
+    width: 20%;
+    background-color: #f2dede;
+    border-right: 2px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#links h2 {
+    font-size: 1.5em;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+#links ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#links ul li {
+    margin: 10px 0;
+}
+
+#links ul li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #8a6d3b;
+    background-color: #f2dede;
+    border-radius: 15px;
+    text-align: center;
+}
+
+#links ul li a:hover {
+    background-color: #c09853;
+    color: #fff;
+}
+
+/* Content Section */
+#noidung {
+    margin-left: 22%;
+    padding: 20px;
+    border-left: 2px solid #ccc;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+#noidung h2 {
+    font-size: 2em;
+    font-style: italic;
+    color: #8a6d3b;
+    padding-bottom: 10px;
+}
+
+#noidung h3 {
+    font-size: 1.5em;
+    color: #8a6d3b;
+    padding-top: 20px;
+}
+
+#noidung ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+/* Address Section */
+address {
+    text-align: center;
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+    margin-top: 20px;
+    font-size: 1em;
+    color: #8a6d3b;
+    background-color: rgba(255, 255, 255, 0.9);
+    clear: both;
+}
+
+/* Link Styles */
+a:link, a:visited {
+    color: #8a6d3b;
+}
+
+a:hover, a:active {
+    color: #c09853;
+}

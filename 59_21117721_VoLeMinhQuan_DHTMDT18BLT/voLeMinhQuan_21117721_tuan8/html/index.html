@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang thanh toán</title>
+    <!-- Sử dụng đường dẫn cục bộ cho Bootstrap CSS -->
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <style>
+        body img {
+            margin-left: 10%;
+            width: 80%;
+            height: 400px;
+        }
+        .mauDo {
+            font-size: 100%;
+            color: red;
+        }
+        /* Dùng Flexbox để căn hàng các mục */
+        .navbar1 {
+            margin-left: 8%;
+            display: flex;
+        }
+        .navbar-nav a {
+            text-decoration: none;
+            font-size: 1.2em;
+            color: blue;
+            padding: 10px 20px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <img src="../img/20.jpg" alt="" srcset="">
+
+    <!-- Thanh điều hướng với Flexbox -->
+    <nav class="navbar1">
+            <a class="nav-item nav-link" href="#">Trang chủ</a>
+            <a class="nav-item nav-link" href="#" id="btnDK">Đăng ký</a>
+            <a class="nav-item nav-link" href="#">Trợ giúp</a>
+    </nav>
+
+    <div class="container mt-5">
+        <table class="table mt-4">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Mã học viên</th>
+                    <th>Họ tên</th>
+                    <th>Email</th>
+                    <th>Tiền dịch vụ</th>
+                    <th>Tiền đồ dùng</th>
+                    <th>Tổng tiền</th>
+                </tr>
+            </thead>
+            <tbody id="tbDanhSach">
+                <tr>
+                    <td>1</td>
+                    <td>HV001</td>
+                    <td>Nguyễn Văn A</td>
+                    <td>nguyenvana@example.com</td>
+                    <td>500,000</td>
+                    <td>200,000</td>
+                    <td>700,000</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="myModalLabel">THÔNG TIN THANH TOÁN</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formThanhToan">
+                            <div class="form-group">
+                                <label for="txtMa">Mã học viên</label>
+                                <input type="text" class="form-control" id="txtMa" placeholder="xx-yyyyyyyy">
+                                <span id="tbMa" class="mauDo"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="txtHT">Họ tên</label>
+                                <input type="text" class="form-control" id="txtHT" placeholder="Nguyen Van A">
+                                <span id="tbTen" class="mauDo"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="txtDC">Email</label>
+                                <input type="email" class="form-control" id="txtDC" placeholder="email@iuh.edu.vn">
+                                <span id="tbDC" class="mauDo"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="slGia">Dịch vụ</label>
+                                <select class="form-control" id="slGia">
+                                    <option value="0">Chọn dịch vụ</option>
+                                    <option value="30000">Bơi - 30,000</option>
+                                    <option value="40000">Gym - 40,000</option>
+                                </select>
+                                <input type="text" id="txtDV" class="form-control" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="chkDoDung">Đồ dùng</label><br>
+                                <input type="checkbox" class="chkDoDung" value="10000"> Áo quần bơi<br>
+                                <input type="checkbox" class="chkDoDung" value="5000"> Phao<br>
+                                <input type="checkbox" class="chkDoDung" value="2000"> Kính bơi<br>
+                                <input type="text" id="txtDD" class="form-control" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="txtTong">Tổng tiền</label>
+                                <input type="text" id="txtTong" class="form-control" readonly>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="btnSave" class="btn btn-success" style="width: 226px;">Thanh toán</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" style="width: 226px;">Hủy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            // Dùng sự kiện để mở modal khi nhấn Đăng ký
+            $("#btnDK").click(function() {
+                $("#myModal").modal();
+            });
+
+            function kiemTraMa() {
+                // Biểu thức chính quy mới, trong đó \d{2} là 2 số đại diện cho năm sinh
+                var mauKT = /^\d{2}-\d{8}$/;
+                if ($("#txtMa").val() === "") {
+                    $("#tbMa").html("Bắt buộc nhập");
+                    $("#tbMa").addClass("mauDo");
+                    return false;
+                }
+                if (!mauKT.test($("#txtMa").val())) {
+                    $("#tbMa").html("Mã không hợp lệ, định dạng đúng là xx-yyyyyyyy với xx là năm sinh");
+                    $("#tbMa").addClass("mauDo");
+                    return false;
+                    
+                }
+                $("#tbMa").html("");
+                return true;
+            }
+            
+
+            function kiemTraTen() {
+                var mauKT = /^[A-Z][a-z]*(\s[A-Z][a-z]*)+$/;
+                if ($("#txtHT").val() === "") {
+                    $("#tbTen").html("Bắt buộc nhập");
+                    $("#tbTen").addClass("mauDo");
+                    return false;
+                }
+                if (!mauKT.test($("#txtHT").val())) {
+                    $("#tbTen").html("Tên phải có ít nhất 2 từ và viết hoa chữ cái đầu mỗi từ");
+                    $("#tbTen").addClass("mauDo");
+                    return false;
+                }
+                $("#tbTen").html("");
+                return true;
+            }
+
+            function kiemTraEmail() {
+                var mauKT = /^[a-zA-Z0-9._-]+@iuh\.edu\.vn$/;
+                if ($("#txtDC").val() === "") {
+                    $("#tbDC").html("Bắt buộc nhập");
+                    $("#tbDC").addClass("mauDo");
+                    return false;
+                }
+                if (!mauKT.test($("#txtDC").val())) {
+                    $("#tbDC").html("Email phải theo định dạng @iuh.edu.vn");
+                    $("#tbDC").addClass("mauDo");
+                    return false;
+                }
+                $("#tbDC").html("");
+                return true;
+            }
+
+            function tinhTong() {
+                var tong = parseFloat($("#txtDV").val()) + parseFloat($("#txtDD").val());
+                $("#txtTong").val(tong);
+            }
+
+            $("#slGia").change(function() {
+                $("#txtDV").val($(this).val());
+                tinhTong();
+            });
+
+            $(".chkDoDung").click(function() {
+                var tienDoDung = 0;
+                $(".chkDoDung:checked").each(function() {
+                    tienDoDung += parseFloat($(this).val());
+                });
+                $("#txtDD").val(tienDoDung);
+                tinhTong();
+            });
+
+            $("#btnSave").click(function() {
+                var ma = $("#txtMa").val();
+                var ht = $("#txtHT").val();
+                var dc = $("#txtDC").val();
+                var tdv = $("#txtDV").val();
+                var tdd = $("#txtDD").val();
+                var tong = $("#txtTong").val();
+
+                if (kiemTraMa() && kiemTraTen() && kiemTraEmail()) {
+                    var them = "<tr><td>1</td><td>" + ma + "</td><td>" + ht + "</td><td>" + dc + "</td><td>" + tdv + "</td><td>" + tdd + "</td><td>" + tong + "</td></tr>";
+                    $("#tbDanhSach").append(them);
+                    $('#myModal').modal('hide');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

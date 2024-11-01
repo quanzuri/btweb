@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .contact-form {
+            width: 50%;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #000;
+        }
+        .contact-form h2 {
+            text-align: center;
+        }
+        .section {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #000;
+        }
+        .section label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        .section input, .section textarea, .section select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .section input[type="checkbox"] {
+            width: auto;
+            margin-right: 10px;
+        }
+        .section input[type="file"] {
+            padding: 0;
+        }
+        .section .checkbox-label {
+            display: inline;
+        }
+        .submit-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .submit-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="contact-form">
+    <h2>Contact Us</h2>
+    
+    <div class="section">
+        <h3>Your message:</h3>
+        <label for="to">To</label>
+        <input type="text" id="to" name="to" value="Example Cafe">
+        
+        <label for="email">Your email</label>
+        <input type="email" id="email" name="email">
+        
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+        
+        <label for="file">Attach File</label>
+        <input type="file" id="file" name="file">
+    </div>
+    
+    <div class="section">
+        <h3>How you found us:</h3>
+        <label for="hear-about">How did you hear of us</label>
+        <select id="hear-about" name="hear-about">
+            <option value="google">Google</option>
+            <option value="friends">Friends</option>
+            <option value="social-media">Social Media</option>
+            <option value="other">Other</option>
+        </select>
+        
+        <label for="newsletter" class="checkbox-label">
+            <input type="checkbox" id="newsletter" name="newsletter">
+            Ensure this box is checked if you would like to receive email updates
+        </label>
+    </div>
+    
+    <button type="submit" class="submit-button">Send message</button>
+</div>
+
+</body>
+</html>
